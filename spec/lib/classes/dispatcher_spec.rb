@@ -10,5 +10,13 @@ RSpec.describe Dispatcher do
 
       expect(actual).to eq(expected)
     end
+
+    it 'routes notes to a note taker' do
+      msg = "note here's my sample note"
+
+      actual = Dispatcher.new(msg).dispatch_message
+
+
+    end
   end
 end
