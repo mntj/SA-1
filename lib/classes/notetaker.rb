@@ -7,6 +7,7 @@ class Notetaker
 
   def take_note
     note = msg.split(" ")[1..-1].join(" ")
-    Note.create(contents: note)
+    n = Note.create(contents: note)
+    "Saved as note #{n.id}"
   end
 end

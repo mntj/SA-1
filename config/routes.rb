@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  get "/inbound" => "main#inbound"
+  get "/" => "main#inbound"
 end
