@@ -6,10 +6,12 @@ class Dispatcher
   attr_reader :raw_msg
 
   def dispatch_message
-    r = raw_msg
+    key = raw_msg.split(" ").first.downcase
 
-    if r.split(" ").first.downcase == "note"
-      Notetaker.new(r).take_note
+    if key == "note"
+      Notetaker.new(raw_msg).take_note
+    elsif key == "view"
+      Notetaker.new(raw_msg).retrieve_note
     else
       "Sorry, couldn't recognize that input"
     end
