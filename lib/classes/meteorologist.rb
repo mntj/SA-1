@@ -6,8 +6,7 @@ class Meteorologist
   attr_reader :zip
 
   def get_weather
-    res = HTTParty.get()
+    url = "http://api.openweathermap.org/data/2.5/weather?zip=#{zip},us"
+    res = HTTParty.get(url)
   end
-
-  BASE_WEATHER_URL = "api.openweathermap.org/data/2.5/weather?zip="
 end
